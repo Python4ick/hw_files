@@ -7,7 +7,7 @@ data = []
 # Инициализируем строку вывода для записи в файл
 output = ''
 
-# Получаем все файлы .txt из директории
+# Получаем все файлы .txt из директории, исключая recipes.txt из первого дз
 for file in file_list:
     if '.txt' in file and file != 'recipes.txt':
         with open(file, 'r', encoding='utf-8') as f:
@@ -24,3 +24,5 @@ for file, text in data:
     output += '\n'
 print(output)
 
+with open('output.txt', 'w', encoding='utf-8') as f:
+    f.write(output)
